@@ -1,17 +1,44 @@
 
+
 impress().init();
 
 
-let next_slide = document.getElementById('next-slide');
-let prev_slide = document.getElementById('prev-slide');
-
-next_slide.addEventListener("click", ()=>{
-    impress().next();
-	console.log("hidup");
-})
+let next_actio = document.getElementById('next-slide');
+let prev_actio = document.getElementById('prev-slide');
+let page_audio = ""
 
 
-prev_slide.addEventListener("click", ()=>{
+// check current slide value and replace as audio nama value 
+document.addEventListener("impress:stepenter", function(event) {
+    let slide = event.target;
+    let posts = slide.id;
+    let value = posts.replace('step-','slide-');
+    page_audio = value+".mp3";
+});
+
+
+// get current slide audio name and play audio
+let audio_play = () => {
+
+    let aruri = window.location.pathname.split('/');
+    let rpath = aruri[aruri.length - 1];
+    let vpath = rpath.replace('.html','/');
+    let files = vpath+page_audio;
+    let plays = document.getElementById('main-player');
+
+    plays.src = files;
+    plays.load();
+    plays.play();
+}
+
+
+prev_actio.addEventListener("click", ()=>{
     impress().prev();
-	console.log("hidup");
+    audio_play();
 })
+
+next_actio.addEventListener("click", ()=>{
+    impress().next();
+    audio_play();
+})
+
