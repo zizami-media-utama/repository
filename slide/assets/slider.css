@@ -63,7 +63,7 @@ li {
 
 
 
-.control{
+#control{
     position: absolute;
     z-index: 3000;
     background: violet;
