@@ -3,7 +3,12 @@ function simulateKeyPress(key) {
   textField.dispatchEvent(event);
 }
 
-
 let inputElement = document.getElementById('next-slide');
-let keyPressEvent = new KeyboardEvent('keydown', { key: 'KeyRight' });
-inputElement.dispatchEvent(keyPressEvent);
+
+inputElement.addEventListener("click", ()=>{
+    let inputElement = document.getElementById('impress');
+    let keyPressEvent = new KeyboardEvent('keydown', { key: 'KeyRight' });
+    inputElement.dispatchEvent(keyPressEvent);
+
+})
+
