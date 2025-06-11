@@ -6,9 +6,7 @@ function simulateKeyPress(key) {
 let inputElement = document.getElementById('next-slide');
 
 inputElement.addEventListener("click", ()=>{
-    let targetElement = document.getElementById('impress');
-    let keyPressEvent = new KeyboardEvent('keydown', { key: 'KeyRight' });
-    targetElement.dispatchEvent(keyPressEvent);
+    impress().next();
 
 })
 
