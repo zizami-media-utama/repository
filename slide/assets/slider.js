@@ -18,7 +18,7 @@ document.addEventListener("impress:stepenter", function(event) {
 
 
 // get current slide audio name and play audio
-let audio_play = () => {
+let audio_load = () => {
 
     let aruri = window.location.pathname.split('/');
     let rpath = aruri[aruri.length - 1];
@@ -34,11 +34,12 @@ let audio_play = () => {
 
 prev_actio.addEventListener("click", ()=>{
     impress().prev();
-    audio_play();
+    audio_load();
 })
+
 
 next_actio.addEventListener("click", ()=>{
     impress().next();
-    audio_play();
+    audio_load();
 })
 
