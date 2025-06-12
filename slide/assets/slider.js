@@ -7,6 +7,11 @@
 
 // Global Variable
 let page_audio = document.getElementById('main-player');
+let sec1_audio = document.getElementById('seclayer-01');
+let sec2_audio = document.getElementById('seclayer-02');
+let sec3_audio = document.getElementById('seclayer-03');
+let sec4_audio = document.getElementById('seclayer-04');
+let sec5_audio = document.getElementById('seclayer-05');
 let page_timer = document.getElementById('progressbar');
 let page_progs = document.getElementById('progrestime');
 
@@ -17,7 +22,7 @@ impress().init();
 
 
 
-// AUDIO LIBRARY
+// MAIN AUDIO LIBRARY
 let audio_init = (posts)=> {
 
     page_timer.style.width = "0%";
@@ -28,11 +33,11 @@ let audio_init = (posts)=> {
     let rpath = aruri[aruri.length - 1];
     let vpath = rpath.replace('.html','/');
     let files = vpath+named;
-    page_audio.src = files;
-    page_audio.load();
+    sec1_audio.src = files;
+    sec1_audio.load();
 
-    page_audio.addEventListener('canplay', () => {
-        page_audio.play();
+    sec1_audio.addEventListener('canplay', () => {
+        sec1_audio.play();
         audio_prog();
     });
 }
@@ -40,19 +45,19 @@ let audio_init = (posts)=> {
 
 let audio_exit = ()=> {
     page_progs.classList.remove('active');
-    page_audio.pause();
-    page_audio.currentTime = 0;
-    page_audio.src = ""
+    sec1_audio.pause();
+    sec1_audio.currentTime = 0;
+    sec1_audio.src = ""
 }
 
 
 let audio_mute = ()=> {
-    page_audio.muted = ! page_audio.muted;
+    sec1_audio.muted = ! sec1_audio.muted;
 }
 
 
 let audio_play = ()=> {
-    ( page_audio.paused ) ? page_audio.play() : page_audio.pause();
+    ( sec1_audio.paused ) ? sec1_audio.play() : sec1_audio.pause();
 }
 
 
@@ -62,37 +67,37 @@ let audio_prog = ()=> {
     let mutes = document.getElementById('mute-icon');
 
    
-    page_audio.addEventListener('timeupdate', () => {
-        const progress = (page_audio.currentTime / page_audio.duration) * 100;
+    sec1_audio.addEventListener('timeupdate', () => {
+        const progress = (sec1_audio.currentTime / sec1_audio.duration) * 100;
         page_timer.style.width = progress + '%';
     });
    
     
-    page_audio.addEventListener("pause", (event) => { 
+    sec1_audio.addEventListener("pause", (event) => { 
         let icon = plays.getAttribute('data-play');
         plays.src = icon
         page_progs.classList.remove('active');
     })
 
-    page_audio.addEventListener("play", (event) => { 
+    sec1_audio.addEventListener("play", (event) => { 
         let icon = plays.getAttribute('data-pause');
         plays.src = icon
         page_progs.classList.add('active');
     })
 
-    page_audio.addEventListener("mute", (event) => { 
+    sec1_audio.addEventListener("mute", (event) => { 
         let icon = mutes.getAttribute('data-unmute');
         mutes.src = icon
     })
 
-    page_audio.addEventListener("unmute", (event) => { 
+    sec1_audio.addEventListener("unmute", (event) => { 
         let icon = mutes.getAttribute('data-muted');
         mutes.src = icon
     })
 }
 
 
-// CONTROL LIBRARY
+// SECTION AUDIO LIBRARY
 
 let control_init = ()=> {
     document.getElementById('panel').classList.remove('slide-on-stop');
@@ -140,6 +145,8 @@ let screens_full = ()=> {
         }
     }
 }
+
+
 
 
 // EVENT LISTENER 
