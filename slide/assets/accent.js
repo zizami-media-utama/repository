@@ -1,5 +1,5 @@
 function particle(){
-    particlesJS('particles-js',
+    particlesJS('wall',
 		{
 			"particles": {
 			"number": {
