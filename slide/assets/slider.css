@@ -96,8 +96,8 @@ dotlottie-player{
     top: 0;
 }
 
-.progress-bar,
-#progrestime{
+
+.progress-bar, #progrestime{
     opacity: 0;
     width: 0;
     height: 4px;
@@ -105,17 +105,18 @@ dotlottie-player{
 }
 
 
-#progrestime.active,
-#progrestime.active .progress-bar {
+#progrestime.active, #progrestime.active .progress-bar {
     opacity: 1;
     transition: 500ms;
     background-color: rgba(255, 255, 255, .3);
 }
 
+
 #progrestime.active{
   width: 100%;
    transition: 500ms;
 }
+
 
 .progress-bar {
     height: 4px;
@@ -162,9 +163,14 @@ footer{
 
 #panel .icon{
     margin: 20px;
-    height: 42px;
-    width: 42px;
+    height: 36px;
+    width: 36px;
     border-radius: 50px;
+}
+
+#panel .icon img{
+    height: 24px;
+    width: 24px;
 }
 
 #play-slide.icon{
