@@ -188,7 +188,7 @@ footer{
     height: 36px;
 }
 
-
+.slide-on-play #full-slide,
 .slide-on-play #mute-audio,
 .slide-on-play #pend-audio,
 .slide-on-play #prev-slide,
@@ -198,7 +198,7 @@ footer{
     transition: 300ms;
 }
 
-
+.slide-on-stop #full-slide,
 .slide-on-stop #mute-audio,
 .slide-on-stop #pend-audio,
 .slide-on-stop #prev-slide,

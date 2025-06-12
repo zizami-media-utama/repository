@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module" ></script>
 </head>
-<body>
+<body id="we-slide">
     <header>
         <div id="progrestime" class="progress-container hide">
             <div class="progress-bar" id="progressbar"></div>
@@ -167,6 +167,9 @@
                 </div>
                 <div id="prev-slide" class="icon flex align-center justify-center icon-bg">
                     <img id="prev-icon" src="../../assets/icons/arrow-left.svg" alt="back to previous slide"/>
+                </div>
+                <div id="full-slide" class="icon flex align-center justify-center icon-bg">
+                    <img id="full-icon" src="../../assets/icons/maximize.svg" data-maxs="../../assets/icons/maximize.svg" data-mins="../../assets/icons/minimize.svg" alt="fulscreen mode"/>
                 </div>
                 <div id="next-slide" class="icon flex align-center justify-center icon-bg">
                     <img id="next-icon" src="../../assets/icons/arrow-right.svg" alt="go to next slide"/>

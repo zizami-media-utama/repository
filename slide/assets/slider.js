@@ -118,6 +118,30 @@ let control_prev = ()=> {
 }
 
 
+let screens_full = ()=> {
+
+    let main = document.getElementById("we-slide");
+    let init = document.getElementById("full-icon");
+
+    if (document.fullscreenElement) {
+        let icon = init.getAttribute('data-maxs');
+        init.src = icon;
+        document.exitFullscreen()
+
+    } else {
+        let icon = init.getAttribute('data-mins');
+        init.src = icon;
+        if (main.requestFullscreen) {
+            main.requestFullscreen();
+        } else if (main.webkitRequestFullscreen) { /* Safari */
+            main.webkitRequestFullscreen();
+        } else if (main.msRequestFullscreen) { /* IE11 */
+            main.msRequestFullscreen();
+        }
+    }
+}
+
+
 // EVENT LISTENER 
 document.addEventListener("impress:stepenter", function(event) {
     
@@ -165,4 +189,9 @@ document.getElementById('next-slide').addEventListener("click", (event)=>{
 // prev slide
 document.getElementById('prev-slide').addEventListener("click", (event)=>{
     event.preventDefault(); control_prev();
+})
+
+// full screen
+document.getElementById('full-slide').addEventListener("click", (event)=>{
+    event.preventDefault(); screens_full();
 })
